@@ -1,0 +1,29 @@
+﻿:root {
+  /* 눈이 편한 아이보리 배경과 차분한 틸, 따뜻한 코랄 포인트를 사용합니다. */
+  --color-main: #1f6f68;
+  --color-accent: #e76f51;
+  --color-background: #f8f7f3;
+  --color-surface: #ffffff;
+  --color-text: #24272a;
+  --color-muted: #6d7479;
+  --color-border: #d9dedb;
+
+  /* 본문은 Noto Sans KR, 영문 강조 텍스트는 Playfair Display을 사용합니다. */
+  --font-main: 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  /* 공통 간격 토큰입니다. */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 4rem;
+
+  /* 레이아웃 기준값과 반응형 breakpoint입니다. */
+  --container-max: 1120px;
+  --nav-height: 64px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+}

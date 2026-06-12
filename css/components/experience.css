@@ -1,0 +1,217 @@
+/* Experience 섹션은 교육 이력 중심의 탭 UI로 구성합니다. */
+#experience {
+  background: var(--color-background);
+}
+
+.experience-content {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+#experience .section-heading {
+  max-width: 100%;
+}
+
+#experience .section-title {
+  white-space: nowrap;
+}
+
+.experience-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.experience-tab {
+  min-height: 42px;
+  padding: 0 var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-weight: 700;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.experience-tab:hover,
+.experience-tab.is-active {
+  border-color: var(--color-main);
+  background: var(--color-main);
+  color: var(--color-surface);
+}
+
+.experience-tab:hover {
+  transform: translateY(-1px);
+}
+
+.experience-panel {
+  display: none;
+}
+
+.experience-panel.is-active {
+  display: block;
+}
+
+.experience-timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-lg);
+  padding-left: var(--space-lg);
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: 0.38rem;
+  width: 2px;
+  background: rgba(31, 111, 104, 0.2);
+}
+
+.experience-timeline-item {
+  position: relative;
+}
+
+.experience-timeline-dot {
+  position: absolute;
+  top: 1.2rem;
+  left: calc(var(--space-lg) * -1 - 0.06rem);
+  width: 0.88rem;
+  height: 0.88rem;
+  border: 3px solid var(--color-background);
+  border-radius: 50%;
+  background: var(--color-main);
+  box-shadow: 0 0 0 4px rgba(31, 111, 104, 0.14);
+}
+
+.experience-card,
+.certification-card,
+.activity-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 16px 40px rgba(36, 39, 42, 0.05);
+}
+
+.experience-card-head {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.experience-period {
+  color: var(--color-main);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.experience-card-title {
+  margin-top: var(--space-xs);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.experience-card-subtitle,
+.experience-note,
+.activity-description,
+.certification-meta,
+.certification-date,
+.experience-empty {
+  color: var(--color-muted);
+}
+
+.experience-card-badges,
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.experience-pill,
+.experience-skill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 0.65rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.experience-pill {
+  background: rgba(31, 111, 104, 0.1);
+  color: var(--color-main);
+}
+
+.experience-skills {
+  margin-top: var(--space-md);
+}
+
+.experience-skill {
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.experience-note {
+  margin-top: var(--space-md);
+}
+
+.certification-grid,
+.activity-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.certification-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.certification-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(231, 111, 81, 0.12);
+  font-size: 1.35rem;
+}
+
+.certification-title {
+  color: var(--color-text);
+  font-size: 1.15rem;
+}
+
+.certification-date {
+  margin-top: var(--space-xs);
+  font-weight: 700;
+}
+
+.experience-empty {
+  padding: var(--space-lg);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+@media (min-width: 768px) {
+  .experience-card-head {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  #experience .section-title {
+    white-space: normal;
+  }
+}
