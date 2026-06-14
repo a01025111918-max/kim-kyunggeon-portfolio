@@ -1,0 +1,130 @@
+/* About 섹션은 프로필과 소개 문장을 나란히 배치합니다. */
+#about {
+  background: var(--color-surface);
+}
+
+.about-grid {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.about-profile {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-md);
+}
+
+.about-image-wrap {
+  position: relative;
+  display: grid;
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(31, 111, 104, 0.18);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(231, 111, 81, 0.16), transparent 35%),
+    linear-gradient(135deg, rgba(31, 111, 104, 0.14), rgba(248, 247, 243, 0.88));
+  box-shadow: 0 20px 60px rgba(36, 39, 42, 0.09);
+}
+
+.about-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image-fallback {
+  display: none;
+  color: var(--color-main);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 18vw, 5rem);
+  font-weight: 700;
+}
+
+.about-image-wrap.is-fallback .about-image-fallback {
+  display: block;
+}
+
+.about-available-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(31, 111, 104, 0.2);
+  border-radius: 999px;
+  background: rgba(31, 111, 104, 0.08);
+  color: var(--color-main);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.about-available-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 rgba(34, 197, 94, 0.42);
+  animation: about-pulse 1.8s ease-out infinite;
+}
+
+.about-eyebrow {
+  color: var(--color-main);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.about-title {
+  margin-top: var(--space-xs);
+  color: var(--color-text);
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1.18;
+}
+
+.about-summary {
+  margin-top: var(--space-lg);
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2.5vw, 1.08rem);
+  line-height: 1.9;
+}
+
+.about-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.about-keyword {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+@keyframes about-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.42);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--space-2xl);
+  }
+}

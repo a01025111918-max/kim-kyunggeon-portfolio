@@ -1,0 +1,120 @@
+/* Tech Stack 섹션은 모든 기술을 한눈에 볼 수 있는 카드 그리드로 구성합니다. */
+#tech-stack {
+  background: var(--color-background);
+}
+
+.tech-stack-content {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+#tech-stack .section-heading {
+  max-width: 100%;
+}
+
+#tech-stack .section-title {
+  white-space: nowrap;
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.section-eyebrow {
+  color: var(--color-main);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.section-title {
+  margin-top: var(--space-xs);
+  color: var(--color-text);
+  font-size: clamp(2rem, 7vw, 3.3rem);
+  line-height: 1.18;
+}
+
+.tech-category-grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.tech-category {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.tech-category-title {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(31, 111, 104, 0.1);
+  color: var(--color-main);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tech-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.tech-item {
+  display: grid;
+  gap: var(--space-sm);
+  min-height: 132px;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 16px 40px rgba(36, 39, 42, 0.05);
+}
+
+.tech-item-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tech-name {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.tech-level-label {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(31, 111, 104, 0.1);
+  color: var(--color-main);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.tech-item-note {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .tech-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  #tech-stack .section-title {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1180px) {
+  .tech-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

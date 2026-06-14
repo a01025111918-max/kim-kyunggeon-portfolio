@@ -1,0 +1,54 @@
+﻿/* 모든 요소의 박스 모델을 예측하기 쉽게 통일합니다. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 브라우저 기본 여백을 제거해 레이아웃 기준점을 맞춥니다. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* 이미지가 부모 너비를 넘지 않도록 기본값을 정리합니다. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 링크의 기본 밑줄과 색상 상속을 정리합니다. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}

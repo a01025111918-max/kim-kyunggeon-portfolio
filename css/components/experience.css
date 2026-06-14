@@ -1,0 +1,173 @@
+/* Experience 섹션은 모든 이력을 한눈에 볼 수 있는 카드 그리드로 구성합니다. */
+#experience {
+  background: var(--color-background);
+}
+
+.experience-content {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+#experience .section-heading {
+  max-width: 100%;
+}
+
+#experience .section-title {
+  white-space: nowrap;
+}
+
+.experience-group-grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.experience-group {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.experience-group-title {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(31, 111, 104, 0.1);
+  color: var(--color-main);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.experience-card-grid,
+.certification-grid,
+.activity-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.experience-card,
+.certification-card,
+.activity-card {
+  display: grid;
+  gap: var(--space-md);
+  min-height: 150px;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 16px 40px rgba(36, 39, 42, 0.05);
+}
+
+.experience-card-head {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.experience-period {
+  color: var(--color-main);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.experience-card-title {
+  margin-top: var(--space-xs);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.experience-card-subtitle,
+.experience-note,
+.activity-description,
+.certification-meta,
+.certification-date,
+.experience-empty {
+  color: var(--color-muted);
+}
+
+.experience-card-badges,
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.experience-pill,
+.experience-skill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 0.65rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.experience-pill {
+  background: rgba(31, 111, 104, 0.1);
+  color: var(--color-main);
+}
+
+.experience-skill {
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.certification-card {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+}
+
+.certification-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(231, 111, 81, 0.12);
+  font-size: 1.35rem;
+}
+
+.certification-title {
+  color: var(--color-text);
+  font-size: 1.15rem;
+}
+
+.certification-date {
+  margin-top: var(--space-xs);
+  font-weight: 700;
+}
+
+.experience-empty {
+  padding: var(--space-lg);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+@media (min-width: 768px) {
+  .experience-card-grid,
+  .certification-grid,
+  .activity-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-card-head {
+    align-items: start;
+  }
+}
+
+@media (max-width: 900px) {
+  #experience .section-title {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1180px) {
+  .experience-card-grid,
+  .certification-grid,
+  .activity-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

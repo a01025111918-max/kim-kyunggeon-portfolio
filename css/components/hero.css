@@ -1,0 +1,192 @@
+/* Hero 섹션은 첫 화면 전체를 채우고 내용을 중앙에 배치합니다. */
+#hero {
+  position: relative;
+  /*grid의 역할?
+  ==> 보통 div를 쓰게되면 
+  --> 행과 열은 세로 배치가 되는데
+  --> grid를 쓰게 되면 가로로 배치가됨 
+  */
+  display: grid;
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  padding-bottom: var(--space-xl);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(31, 111, 104, 0.13),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(231, 111, 81, 0.12),
+      transparent 24rem
+    ),
+    linear-gradient(135deg, var(--color-background) 0%, #eef5f2 100%);
+}
+
+/* 미세한 점 패턴으로 단색 배경에 깊이를 더합니다. */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background-image: radial-gradient(
+    rgba(36, 39, 42, 0.12) 0.6px,
+    transparent 0.6px
+  );
+  background-size: 18px 18px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 24%,
+    #000 76%,
+    transparent
+  );
+}
+
+#hero .section-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: calc(100vh - var(--nav-height) - var(--space-xl));
+  place-items: center;
+}
+
+.hero-content {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 820px);
+  /*폰트 색깔을 미리 지정해놓고 갖다 쓰는 것처럼 , padding도 미리 값을 지정하고
+  이렇게 갖다 쓸 수 있따. 
+  */
+  padding: var(--space-xl) 0;
+  text-align: center;
+  transform: translateY(-6vh);
+}
+
+.hero-name-en {
+  margin-bottom: var(--space-sm);
+  color: var(--color-main);
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 700;
+}
+
+.hero-name {
+  color: var(--color-text);
+  font-size: clamp(3.25rem, 13vw, 7.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-tagline {
+  margin-top: var(--space-lg);
+  color: var(--color-text);
+  font-size: clamp(1.35rem, 4.8vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.hero-subtagline {
+  max-width: 680px;
+  margin-top: var(--space-md);
+  color: var(--color-muted);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 48px;
+  padding: 0 var(--space-lg);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+}
+
+.hero-cta-primary {
+  background: var(--color-main);
+  color: var(--color-surface);
+}
+
+.hero-cta-secondary {
+  border-color: var(--color-main);
+  color: var(--color-main);
+}
+
+.hero-cta-secondary:hover {
+  background: rgba(31, 111, 104, 0.08);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: calc(var(--space-xl) * -0.25);
+  left: 50%;
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
+.hero-scroll-arrow {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid var(--color-main);
+  border-bottom: 2px solid var(--color-main);
+  transform: rotate(45deg);
+  animation: hero-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(9px) rotate(45deg);
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-content {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    transform: translateY(-3vh);
+  }
+
+  .hero-cta-group {
+    width: 100%;
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  .hero-scroll-indicator {
+    bottom: var(--space-md);
+  }
+}
