@@ -49,9 +49,10 @@ function renderHero(hero) {
   const primaryHref = escapeHtml(hero.ctaPrimary?.href);
   const secondaryLabel = escapeHtml(hero.ctaSecondary?.label);
   const secondaryHref = escapeHtml(hero.ctaSecondary?.href);
+  const primaryIsExternal = /^https?:\/\//.test(String(hero.ctaPrimary?.href || ''));
 
   const primaryCta = hero.ctaPrimary
-    ? `<a class="hero-cta hero-cta-primary" href="${primaryHref}" download>${primaryLabel}</a>`
+    ? `<a class="hero-cta hero-cta-primary" href="${primaryHref}"${primaryIsExternal ? ' target="_blank" rel="noopener noreferrer"' : ' download'}>${primaryLabel}</a>`
     : '';
   const secondaryCta = hero.ctaSecondary
     ? `<a class="hero-cta hero-cta-secondary" href="${secondaryHref}" target="_blank" rel="noopener noreferrer">${secondaryLabel}</a>`
@@ -203,9 +204,10 @@ function renderProjects(projects) {
     const cardTitle = escapeHtml(project.cardTitle || project.title);
     const cardDescription1 = escapeHtml(project.description1 || project.period || '');
     const cardDescription3 = escapeHtml(project.description3 || '');
+    const showMobileMockup = project.showMobileMockup !== false;
     const teamBadge = Number(project.teamSize) === 1
       ? '개인 프로젝트'
-      : `팀 프로젝트 (${escapeHtml(project.teamSize)}인)`;
+      : '팀 프로젝트';
     const deviceImageMarkup = thumbnail
       ? `<img class="project-card-image" src="${thumbnail}" alt="${escapeHtml(project.title)} 반응형 화면" loading="lazy">`
       : '';
@@ -216,7 +218,7 @@ function renderProjects(projects) {
     return `
       <button class="project-card" type="button" data-project-index="${index}">
         <span class="project-thumb${thumbnail ? '' : ' is-fallback'}" aria-hidden="true">
-          <span class="project-device-showcase">
+          <span class="project-device-showcase${showMobileMockup ? '' : ' is-desktop-only'}">
             <span class="project-device project-device-desktop">
               <span class="project-device-bar"></span>
               <span class="project-device-screen">
@@ -225,13 +227,19 @@ function renderProjects(projects) {
               </span>
               <span class="project-device-stand"></span>
             </span>
-            <span class="project-device project-device-phone">
-              <span class="project-device-phone-speaker"></span>
-              <span class="project-device-screen">
-                ${deviceImageMarkup}
-                <span class="project-thumb-fallback">${primaryTech}</span>
-              </span>
-            </span>
+            ${
+              showMobileMockup
+                ? `
+                  <span class="project-device project-device-phone">
+                    <span class="project-device-phone-speaker"></span>
+                    <span class="project-device-screen">
+                      ${deviceImageMarkup}
+                      <span class="project-thumb-fallback">${primaryTech}</span>
+                    </span>
+                  </span>
+                `
+                : ''
+            }
           </span>
         </span>
         <span class="project-card-body">
@@ -301,6 +309,9 @@ function renderProjects(projects) {
     const techTags = Array.isArray(project.techStack)
       ? project.techStack.map((tech) => `<span class="project-tech-tag">${escapeHtml(tech)}</span>`).join('')
       : '';
+    const unavailableNote = project.unavailableNote
+      ? `<p class="project-unavailable-note">${escapeHtml(project.unavailableNote)}</p>`
+      : '';
     const linkButtons = getProjectLinks(project).map((link, index) => {
       const buttonClass = index === 0 ? ' project-link-primary' : '';
 
@@ -332,6 +343,7 @@ function renderProjects(projects) {
       <div class="project-tech-list project-modal-tech">
         ${techTags}
       </div>
+      ${unavailableNote}
       <div class="project-links">
         ${linkButtons}
       </div>

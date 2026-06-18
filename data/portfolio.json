@@ -6,7 +6,7 @@
     "subTagline": "Java · Spring Boot · AWS로 서비스를 설계하고 운영합니다",
     "ctaPrimary": {
       "label": "이력서 다운로드",
-      "href": "https://docs.google.com/document/d/1jhEYJk7Q1xZ6WbdGymh1aB4ndkQIiKqS/view"
+      "href": "https://docs.google.com/document/d/1jhEYJk7Q1xZ6WbdGymh1aB4ndkQIiKqS/edit"
     },
     "ctaSecondary": {
       "label": "GitHub 보기",
@@ -116,7 +116,7 @@
       "description1": "제작기간: 30일",
       "description3": "개발언어: MySQL, Java, Spring, JavaScript, React",
       "period": "2026.05 – 2026.06",
-      "teamSize": 1,
+      "teamSize": 2,
       "role": "설계 · 개발 · 배포 전담",
       "description": "React + Spring Boot + MySQL을 Docker Compose로 컨테이너화하고 AWS EC2에 배포한 판매 및 홍보용 서비스. S3 파일 첨부, JWT 인증, CloudFront CDN 연동까지 구현.",
       "techStack": [
@@ -144,6 +144,40 @@
       "demoVideo": "",
       "thumbnail": "./images/projects/ESG프로젝트-thumb.png",
       "highlights": "단순 CRUD를 넘어 인프라 전체 흐름을 직접 구성하고 트러블슈팅한 프로젝트"
+    },
+    {
+      "id": "탄소 커넥트(Carbone Connect)",
+      "title": "커뮤니티 시스템을 통해 탄소배출량 절약을 유도하는 풀스택 애플리케이션",
+      "cardTitle": "데스크탑 웹용",
+      "subtitle": "커뮤니티 실습용 프로젝트",
+      "description1": "제작기간: 30일",
+      "description3": "개발언어: Oracle, Java, Spring, JavaScript, React",
+      "period": "2026.03 – 2026.04",
+      "teamSize": 2,
+      "role": "설계 · 개발 전담",
+      "description": "React + Spring Boot + Oracle Database를 통해 비밀번호 암호화, JWT 인증을 구현했습니다. 포인트 나눔을 통해 일부 결제 로직 흐름도 구현했습니다.",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "React",
+        "Oracle Database",
+        "bcrypt",
+        "JWT"
+      ],
+      "features": [
+        "JWT 기반 로그인 · 회원가입",
+        "bcrypt를 통한 비밀번호 암호화",
+        "포인트 나눔을 통한 결제 로직 구현",
+        "한글 인코딩(utf8mb4) 이슈 해결 경험"
+      ],
+      "architectureDiagram": "./images/projects/project01-architecture.png",
+      "github": "https://github.com/a01025111918-max/CB-Project-Portfolio.git",
+      "liveUrl": "",
+      "demoVideo": "",
+      "thumbnail": "./images/projects/탄소 커넥트(Carbone Connect)-thumb.png",
+      "highlights": "로그인·회원가입 및 결제 로직을 구현한 프로젝트",
+      "showMobileMockup": false,
+      "unavailableNote": "팀 프로젝트 종료 후 서버 및 데이터베이스 설정이 변경되어 현재 공개 실행 환경은 제공하지 않으며, 개발 당시 화면과 소스 코드를 기준으로 정리했습니다."
     }
   ],
   "experience": {
