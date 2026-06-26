@@ -178,6 +178,46 @@
       "highlights": "로그인·회원가입 및 결제 로직을 구현한 프로젝트",
       "showMobileMockup": false,
       "unavailableNote": "팀 프로젝트 종료 후 서버 및 데이터베이스 설정이 변경되어 현재 공개 실행 환경은 제공하지 않으며, 개발 당시 화면과 소스 코드를 기준으로 정리했습니다."
+    },
+    {
+      "id": "BreadProject",
+      "title": "상품 조회, 대량 주문, 주문 취소 관리가 가능한 B2B 납품 플랫폼 풀스택 애플리케이션",
+      "cardTitle": "데스크탑 웹용",
+      "subtitle": "소규모 매장을 위한 B2B 베이커리 납품 주문 플랫폼 프로젝트",
+      "description1": "제작기간: 40일",
+      "description3": "개발언어: Java, JavaScript, HTML5, CSS3, Spring Boot, React, Gradle, Oracle Database",
+      "period": "2026.05 – 2026.06",
+      "teamSize": 1,
+      "role": "설계 · 개발 전담",
+      "description": "React + Spring Boot + Oracle Database를 통해 상품 조회, 대량 주문, 주문 취소 관리 기능을 구현했습니다.",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "React",
+        "Oracle Database",
+        "bcrypt",
+        "JWT"
+      ],
+      "features": [
+        "회원 로그인 여부 확인 후 주문 가능 처리",
+        "주문 완료 시 주문 데이터 저장",
+        "주문 취소 요청 기능 구현",
+        "주문 취소 요청 상태 관리",
+        "관리자 페이지 구현",
+        "주문 완료 목록 조회",
+        "주문 취소 요청 목록 조회",
+        "주문 취소 승인 기능 구현",
+        "전체 취소 승인 및 개별 취소 승인 처리",
+        "상품 재고 목록 조회"
+      ],
+      "architectureDiagram": "",
+      "github": "https://a01025111918-max.github.io/BreadProject/",
+      "liveUrl": "",
+      "demoVideo": "",
+      "thumbnail": "./images/projects/BreadProject-thumb.png",
+      "highlights": "상품 조회, 대량 주문, 주문 취소 관리가 가능한 B2B 납품 플랫폼 프로젝트",
+      "showMobileMockup": false,
+      "unavailableNote": "현재 배포는 하지 않고 있습니다. 개발 당시 화면과 소스코드를 기준으로 정리했습니다. 조만간 배포를 할 예정입니다."
     }
   ],
   "experience": {
