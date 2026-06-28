@@ -372,6 +372,7 @@ body.modal-open {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 .project-links {
